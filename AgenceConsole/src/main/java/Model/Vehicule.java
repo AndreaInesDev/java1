@@ -1,6 +1,6 @@
 package Model;
 
-abstract class Vehicule {
+public class Vehicule {
     private String model;
     private String marque;
     private  int annee;
@@ -8,12 +8,12 @@ abstract class Vehicule {
 
 
     public Vehicule(String model, String marque, int annee, TypeCarburant carburant) {
+        this();
         this.model = model;
         this.marque = marque;
         this.annee = annee;
         this.carburant = carburant;
     }
-    public  void afficherInfos(){};
 
     public String getModel() {
         return model;
