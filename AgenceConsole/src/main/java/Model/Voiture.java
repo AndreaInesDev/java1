@@ -3,9 +3,9 @@ package Model;
 public class Voiture extends  Vehicule{
    private int nbPortes;
 
-   public  Vehicule(){};
-    public Vehicule(String model, String marque, int annee, TypeCarburant carburant, int nbPortes) {
-        super(model, marque, annee, carburant);
+
+    public Voiture(String model, String marque, int annee, TypeCarburant carburant, Agence agence, int nbPortes) {
+        super(model, marque, annee, carburant, agence);
         this.nbPortes = nbPortes;
     }
 
@@ -17,9 +17,12 @@ public class Voiture extends  Vehicule{
         this.nbPortes = nbPortes;
     }
 
+
     @Override
-    public  String toString(){
-        return "Voiture: " + getModel() + " - " + getMarque() + " - (" + getAnnee() + ")"
-                + " Nbres de portes " + nbPortes;
+    public String toString() {
+        return "Voiture{" +
+                "nbPortes=" + nbPortes +
+                ", carburant=" + carburant +
+                '}';
     }
 }

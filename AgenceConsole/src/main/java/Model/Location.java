@@ -1,14 +1,29 @@
 package Model;
 
 public class Location {
+    private static long cpt = 0;
+
+private long id;
    private User user;
    private Vehicule vehiculeLoué;
    private int nbJours;
+
+    public Location() {
+        this.id = cpt++;
+    }
 
     public Location(User user, Vehicule vehiculeLoué, int nbJours) {
         this.user = user;
         this.vehiculeLoué = vehiculeLoué;
         this.nbJours = nbJours;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public User getUser() {
@@ -35,15 +50,16 @@ public class Location {
         this.nbJours = nbJours;
     }
 
-    public String toString(){
-
-        if (user == null || vehiculeLoué == null) {
+    @Override
+    public String toString() {
+        if (user == null || vehiculeLoué == null){
             return "Location invalide (client ou véhicule manquant)";
-        } else{
-
-            return "Location de " + user.getfirsName() + " " + user.getlastName() + " pour " + nbJours + " jours.\n"
-                    + " véhicule loué : " + vehiculeLoué;
+        }else {
+            return "Location{" +
+                    "user=" + user +
+                    ", vehiculeLoué=" + vehiculeLoué +
+                    ", nbJours=" + nbJours +
+                    '}';
         }
-
     }
 }
